@@ -13,7 +13,10 @@
         }
     ],
     "scripts": {
-        "server": "php -S localhost:8080 public/index.php"
+        "server": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S localhost:8080 public/index.php"
+        ]
     },
     "require": {
         "league/container": "^4.2",
