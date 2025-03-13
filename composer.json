@@ -1,0 +1,26 @@
+{
+    "name": "srathbone/rathwork",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Rathwork\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stephen Rathbone",
+            "email": "stephen@stephenrathbone.co.uk"
+        }
+    ],
+    "scripts": {
+        "server": "php -S localhost:8080 public/index.php"
+    },
+    "require": {
+        "league/container": "^4.2",
+        "laminas/laminas-diactoros": "^3.5",
+        "league/route": "^6.2",
+        "laminas/laminas-httphandlerrunner": "^2.11",
+        "filp/whoops": "^2.17",
+        "twig/twig": "^3.0"
+    }
+}
