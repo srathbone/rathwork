@@ -15,16 +15,19 @@ final class RouteThrowableStrategy extends ApplicationStrategy implements Contai
 {
     use ContainerAwareTrait;
 
+    #[Override]
     public function getNotFoundDecorator(NotFoundException $exception): MiddlewareInterface
     {
         return $this->getContainer()->get(ErrorHandler::class);
     }
 
+    #[Override]
     public function getMethodNotAllowedDecorator(MethodNotAllowedException $exception): MiddlewareInterface
     {
         return $this->getContainer()->get(ErrorHandler::class);
     }
 
+    #[Override]
     public function getThrowableHandler(): MiddlewareInterface
     {
         return $this->getContainer()->get(ErrorHandler::class);

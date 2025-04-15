@@ -9,6 +9,7 @@ require ROOT_DIR . '/src/functions.php';
 function register_error_handler(): void
 {
     if (isProduction()) {
+        ini_set('display_errors', '0');
     } else {
         ini_set('display_errors', '1');
         error_reporting(E_ALL);

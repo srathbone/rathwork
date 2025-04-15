@@ -3,13 +3,14 @@ declare(strict_types=1);
 
 namespace Rathwork\Framework\Renderer;
 
-final class CliTemplateRenderer implements TemplateRenderer
+final readonly class CliTemplateRenderer implements TemplateRenderer
 {
     public function __construct(
         private string $pathToTemplates,
-        private TemplateRenderer $htmlRenderer
+        private TemplateRenderer $htmlRenderer,
     ) {}
 
+    #[Override]
     public function render(string $template, array $data = []): string
     {
         $cliTemplate = sprintf('%s.txt', $template);

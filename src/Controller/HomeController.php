@@ -7,7 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Rathwork\Framework\Renderer\TemplateRenderer;
 
-final class HomeController
+final readonly class HomeController
 {
     public function __construct(private TemplateRenderer $renderer)
     {}

@@ -5,11 +5,12 @@ namespace Rathwork\Framework\Renderer;
 
 use Twig\Environment;
 
-final class TwigTemplateRenderer implements TemplateRenderer
+final readonly class TwigTemplateRenderer implements TemplateRenderer
 {
     public function __construct(private Environment $twigEnvironment)
     {}
 
+    #[Override]
     public function render(string $template, array $data = []): string
     {
         $template = sprintf('%s.html.twig', $template);

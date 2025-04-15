@@ -11,13 +11,14 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Rathwork\Framework\Renderer\TemplateRenderer;
 use Throwable;
 
-final class ErrorHandler implements MiddlewareInterface
+final readonly class ErrorHandler implements MiddlewareInterface
 {
     public function __construct(
         private bool $isProduction,
         private TemplateRenderer $renderer
     ) {}
 
+    #[Override]
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         if (!$this->isProduction) {
